@@ -2,11 +2,9 @@ import React from 'react'
 import { TextInputProps } from 'react-native';
 import { Container } from './styled';
 
-function Input() {
+function Input({...rest}: TextInputProps) {
   return (
-        <Container>
-            <Input/>
-        </Container>
+        <Container {...rest}/> 
   )
 }
 

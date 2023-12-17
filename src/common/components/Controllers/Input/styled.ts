@@ -1,12 +1,7 @@
 import styled from "styled-components/native";
 import { TextInput, TextInputProps } from "react-native";
 
-export const Container = styled.View`
-  width: 100%;
-  margin-bottom: 12px;
-`;
-
-export const Input = styled(TextInput)<TextInputProps>`
+export const Container = styled(TextInput).attrs<TextInputProps>(({}))<TextInputProps>`
   width: 100%;
   height: 56px;
   background-color: white;
