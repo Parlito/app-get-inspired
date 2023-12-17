@@ -13,8 +13,8 @@ export type ProductNavigationProps = {
         profile: undefined;
         favorites: undefined;
         donations: undefined;
-        signIn: undefined;
         register: undefined;
+        signIn: undefined;
       }
     }
   }

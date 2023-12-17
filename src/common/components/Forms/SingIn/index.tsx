@@ -29,7 +29,7 @@ return (
         <Button title='Entrar' onPress={handleSignIn} isLoading={isLoading}/>
         
         <Footer>
-            <FooterButton title='Criar conta' icon="person-add" onPress={() => navigation.navigate('home')}/>
+            <FooterButton title='Criar conta' icon="person-add" onPress={() => navigation.navigate('register')}/>
             <FooterButton title='Esqueci a minha senha' icon="email" onPress={handleForgotPassword}/>
         </Footer>
     </Form>

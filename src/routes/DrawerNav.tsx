@@ -6,7 +6,8 @@ import Home from "../screens/Home";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import Donations from "../screens/Donations";
-import SingIn from "../screens/SingIn";
+import SignInS from "../screens/SingIn";
+import Register from "../screens/Register";
 
 const {Screen, Navigator} = createDrawerNavigator();
 
@@ -52,6 +53,18 @@ function DrawerNav() {
             headerTitle: '',
             drawerItemStyle: {marginLeft: '5%'},
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20}          
+        }}
+        />
+        <Screen name="signIn"
+        component={SignInS}
+        options={{
+            drawerLabel: 'aaaaaaaa',  
+        }}
+        />
+        <Screen name="register"
+        component={Register}
+        options={{
+            drawerLabel: 'bbbbbbbbbb',  
         }}
         />
     </Navigator>
