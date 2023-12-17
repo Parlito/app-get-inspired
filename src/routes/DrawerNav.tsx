@@ -12,7 +12,7 @@ const {Screen, Navigator} = createDrawerNavigator();
 function DrawerNav() {
   return (
     <Navigator >
-        <Screen name='Home'
+        <Screen name='home'
         component={Home}  
         options={{
             drawerLabel: 'Home',
@@ -21,7 +21,7 @@ function DrawerNav() {
             drawerItemStyle: {marginLeft: '5%'},
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20}
         }}/>
-        <Screen name="Favorites"
+        <Screen name="favorites"
         component={Favorites}
         options={{
             drawerLabel: 'Favoritos',
@@ -31,7 +31,7 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20},
         }}
         />
-        <Screen name="Profile"
+        <Screen name="profile"
         component={Profile}
         options={{
             drawerLabel: 'Perfil',
@@ -41,7 +41,7 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '9%',fontSize: 20,},
         }}
         />
-        <Screen name="Donations"
+        <Screen name="donations"
         component={Donations}
         options={{
             drawerLabel: 'Ajude o App!',
