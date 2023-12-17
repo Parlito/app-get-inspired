@@ -6,8 +6,11 @@ import Home from "../screens/Home";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import Donations from "../screens/Donations";
+import SingIn from "../screens/SingIn";
 
 const {Screen, Navigator} = createDrawerNavigator();
+
+
 
 function DrawerNav() {
   return (
@@ -51,7 +54,12 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20}          
         }}
         />
-        
+        <Screen name="signIn"
+        component={SingIn}
+        options={{
+            drawerHideStatusBarOnOpen: true         
+        }}
+        />
     </Navigator>
   )
 }
