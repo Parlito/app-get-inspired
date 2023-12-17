@@ -5,7 +5,7 @@ import Input from '../../Controllers/Input'
 import Button from '../../Controllers/Button'
 import FooterButton from '../../Controllers/FooterButton'
 
-function SingIn() {
+function SignIn() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,4 +36,4 @@ return (
   )
 }
 
-export default SingIn
+export default SignIn

@@ -54,12 +54,6 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20}          
         }}
         />
-        <Screen name="signIn"
-        component={SingIn}
-        options={{
-            drawerHideStatusBarOnOpen: true         
-        }}
-        />
     </Navigator>
   )
 }
