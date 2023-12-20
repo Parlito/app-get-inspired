@@ -1,12 +1,24 @@
 import { NavigationContainer } from "@react-navigation/native";
 import DrawerNav from "./DrawerNav";
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
+import Home from "../screens/Home";
 
 function Routes() {
+
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(setUser);
+
+    return subscriber;
+  }, []);
+
   return (
     <NavigationContainer>
-        <DrawerNav/>
+        {user ? <Home /> : <DrawerNav/>}
     </NavigationContainer>
   )
 }
