@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
+
+import auth from '@react-native-firebase/auth';
 import { Form, Title } from './styled'
 import Input from '../../Controllers/Input'
 import Button from '../../Controllers/Button'
+import { Alert } from 'react-native';
 
 function AccountForm() {
     const [email, setEmail] = useState('');
@@ -9,7 +12,13 @@ function AccountForm() {
     const [isLoading, setIsLoading] = useState(false);
   
     function handleNewAccount() {
+      setIsLoading(true);
 
+      auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => Alert.alert("Conta", "Cadastrado com sucesso!"))
+      .catch((error) => console.log(error))
+      .finally(() => setIsLoading(false));
     }
   
 
