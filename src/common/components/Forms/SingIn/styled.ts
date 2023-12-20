@@ -11,7 +11,7 @@ export const Title = styled.Text`
 
 export const Footer = styled.View`    
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center; 
   margin-top: 50px; 
 `;

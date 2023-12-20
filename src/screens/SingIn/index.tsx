@@ -22,14 +22,6 @@ function SignInS() {
   function handleBack(){
     setCreate(!create);
   }
-
-  function handleForgotPassword() {
-    auth()
-    .sendPasswordResetEmail(email)
-    .then(() => Alert.alert("Redefinir senha", "Enviamos um e-mail para você"))
-    .catch(error => console.log(error));
-  }
-
   return (
     <Container>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
@@ -38,7 +30,6 @@ function SignInS() {
           {create ? <AccountForm/> : <SignIn />} 
           {create ? null : <Footer>
           <FooterButton title='Criar conta' icon="person-add" onPress={handleNewAccount}/>
-          <FooterButton title='Esqueci a minha senha' icon="email" onPress={handleForgotPassword}/>
           </Footer>}
           {create ? <BackButton onPress={handleBack}>
             <MaterialIcons name="arrow-back" size={24} color={"#318ce7"} />

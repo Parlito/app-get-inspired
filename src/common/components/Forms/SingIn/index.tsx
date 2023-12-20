@@ -39,6 +39,9 @@ return (
         <Input placeholder='E-mail' onChangeText={setEmail}/>
         <Input placeholder='Senha' secureTextEntry onChangeText={setPassword}/>
         <Button title='Entrar' onPress={handleSignIn} isLoading={isLoading}/>
+        <Footer>
+        <FooterButton title='Esqueci a minha senha' icon="email" onPress={handleForgotPassword}/>
+        </Footer>
     </Form>
   )
 }

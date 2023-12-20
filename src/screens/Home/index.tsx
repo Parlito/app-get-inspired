@@ -7,7 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 
 function Home() {
   return (
-      <ScrollView style={{flex: 1}}>
+      <ScrollView style={{flex: 1, padding: 5,}}>
       <Button title='Publicar'/>
       <PubliForm/>
       <PubliForm/>
