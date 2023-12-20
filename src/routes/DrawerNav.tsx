@@ -8,6 +8,7 @@ import Profile from "../screens/Profile";
 import Donations from "../screens/Donations";
 import SignInS from "../screens/SingIn";
 import Register from "../screens/Register";
+import CustomDrawer from "../common/components/Layout/Drawer/CustomDrawer";
 
 const {Screen, Navigator} = createDrawerNavigator();
 
@@ -15,7 +16,7 @@ const {Screen, Navigator} = createDrawerNavigator();
 
 function DrawerNav() {
   return (
-    <Navigator >
+    <Navigator drawerContent={props => <CustomDrawer {...props}/>} >
         <Screen name='home'
         component={Home}  
         options={{
