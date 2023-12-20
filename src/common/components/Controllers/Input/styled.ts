@@ -11,4 +11,5 @@ export const Container = styled(TextInput).attrs<TextInputProps>(({}))<TextInput
   padding-left: 20px;
   border: 1px solid black;
   color: black;
+  margin-bottom: 10px;
 `;

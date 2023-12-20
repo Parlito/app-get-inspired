@@ -5,6 +5,9 @@ import Input from '../../Controllers/Input'
 import Button from '../../Controllers/Button'
 import FooterButton from '../../Controllers/FooterButton'
 
+import auth from '@react-native-firebase/auth';
+import { Alert } from 'react-native'
+
 function SignIn() {
 
   const [email, setEmail] = useState('');
@@ -15,10 +18,19 @@ function SignIn() {
 
   function handleSignIn() {
     setIsLoading(true);
+
+    auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(() => {Alert.alert("Usuário logado com sucesso!"); })
+    .catch((error) => console.log(error))
+    .finally(() => setIsLoading(false))
   }
 
   function handleForgotPassword() {
-
+    auth()
+    .sendPasswordResetEmail(email)
+    .then(() => Alert.alert("Redefinir senha", "Enviamos um e-mail para você"))
+    .catch(error => console.log(error));
   }
   
 return (
