@@ -4,9 +4,9 @@ import Button from '../../common/components/Controllers/Button'
 import { useNavigation } from '@react-navigation/native'
 import FooterButton from '../../common/components/Controllers/FooterButton';
 
-
-
 function Profile() {
+
+  
 
   const navigation = useNavigation();
 
@@ -15,8 +15,6 @@ function Profile() {
         <Title>
             Perfil
         </Title>
-        <FooterButton title='Login' icon="person-add" onPress={() => navigation.navigate('signIn')}/>
-        <Button title='Login' onPress={() => navigation.navigate('signIn')}/>
     </Container>
   )
 }

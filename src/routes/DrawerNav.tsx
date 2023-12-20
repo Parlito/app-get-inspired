@@ -1,20 +1,27 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { FontAwesome } from '@expo/vector-icons';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
 import Home from "../screens/Home";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import Donations from "../screens/Donations";
 import SignInS from "../screens/SingIn";
-import Register from "../screens/Register";
 import CustomDrawer from "../common/components/Layout/Drawer/CustomDrawer";
 
 const {Screen, Navigator} = createDrawerNavigator();
 
-
-
 function DrawerNav() {
+
+    const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
+
+    useEffect(() => {
+        const subscriber = auth().onAuthStateChanged(setUser);
+        return subscriber;
+    }, []);
+
   return (
     <Navigator drawerContent={props => <CustomDrawer {...props}/>} >
         <Screen name='home'
@@ -36,7 +43,7 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20},
         }}
         />
-        <Screen name="profile"
+        {user ? <Screen name="profile"
         component={Profile}
         options={{
             drawerLabel: 'Perfil',
@@ -45,7 +52,16 @@ function DrawerNav() {
             drawerItemStyle: {marginLeft: '6%'},
             drawerLabelStyle: {marginLeft: '9%',fontSize: 20,},
         }}
-        />
+        /> : <Screen name="signIn"
+        component={SignInS}
+        options={{
+            drawerLabel: 'Entrar',
+            drawerIcon: config => <FontAwesome name="user" size={30} color="#318ce7" />,
+            headerTitle: '',
+            drawerItemStyle: {marginLeft: '6%'},
+            drawerLabelStyle: {marginLeft: '9%',fontSize: 20,}, 
+        }}
+        /> }
         <Screen name="donations"
         component={Donations}
         options={{
@@ -56,19 +72,8 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '5%', fontSize: 20}          
         }}
         />
-        <Screen name="signIn"
-        component={SignInS}
-        options={{
-            drawerLabel: 'aaaaaaaa',  
-        }}
-        />
-        <Screen name="register"
-        component={Register}
-        options={{
-            drawerLabel: 'bbbbbbbbbb',  
-        }}
-        />
     </Navigator>
+    
   )
 }
 

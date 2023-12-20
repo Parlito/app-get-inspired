@@ -10,19 +10,10 @@ import Home from "../screens/Home";
 
 
 function Routes() {
-
-  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
-
-  useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(setUser);
-
-    return subscriber;
-  }, []);
-
   return (
     <GestureHandlerRootView style={{ padding: 10, flex: 1 }}>
     <NavigationContainer>
-        { <DrawerNav />}
+        <DrawerNav />
     </NavigationContainer>
     </GestureHandlerRootView>
   )

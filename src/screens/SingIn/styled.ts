@@ -22,3 +22,23 @@ export const SubTitle = styled.Text`
   text-align: center;
   margin: 12px 0 24px;
 `;
+
+export const Footer = styled.View`    
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; 
+  margin-top: 50px; 
+`;
+
+export const BackText = styled.Text`
+  font-size: 14px;
+  color: #318ce7;
+  margin-left: 5px;
+`;
+
+export const BackButton = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+`;
