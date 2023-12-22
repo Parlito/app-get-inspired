@@ -17,6 +17,8 @@ const CustomDrawer = props => {
 
     const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
 
+    const usuario = auth().currentUser;
+
     useEffect(() => {
         const subscriber = auth().onAuthStateChanged(setUser);
         return subscriber;
@@ -42,7 +44,7 @@ const CustomDrawer = props => {
             <Image 
                source={{uri:'https://th.bing.com/th/id/R.19fa7497013a87bd77f7adb96beaf768?rik=144XvMigWWj2bw&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f5%2fUser-Profile-PNG-High-Quality-Image.png&ehk=%2bat%2brmqQuJrWL609bAlrUPYgzj%2b%2f7L1ErXRTN6ZyxR0%3d&risl=&pid=ImgRaw&r=0',}}
                style={{height:80, width: 80, borderRadius:40, marginBottom:10}}/>
-            <Text style={{color:'#318ce7', fontSize: 18, marginBottom:5, fontWeight:'bold', marginStart:10}}>Usuário</Text>
+            {user ? <Text style={{color:'#318ce7', fontSize: 18, marginBottom:5, fontWeight:'bold', marginStart:10}}>{usuario.displayName}</Text> : null}
         </ImageBackground>
         <View style={{flex:1,backgroundColor:'white',paddingTop:20}}>   
         <DrawerItemList {...props}/>  
