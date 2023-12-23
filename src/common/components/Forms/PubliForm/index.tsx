@@ -17,6 +17,8 @@ export const PubliForm = () => {
   const [description, setDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const usuario = auth().currentUser;
+
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged((authUser) => {
       setUser(authUser);
@@ -37,6 +39,7 @@ export const PubliForm = () => {
     .collection('posts')
     .add({
       userId: user.uid,
+      name: usuario.displayName,
       titulo,
       description,
       created_at: firestore.FieldValue.serverTimestamp()
