@@ -1,14 +1,22 @@
 import React from 'react'
 import { Container, NormalText, Title, User } from './styled'
 
-function PubliForm() {
-  return (
-    <Container>
-        <Title>Publicação</Title>
-        <User>João Gomes</User>
-        <NormalText>texto do usuário. fgrdsgrdsehghgrthartfgresaghrftgsrteghthbtyghgtrbuhisrtuhgtsujhguboijsnirefgtoprfgijárig~eagjríogjtíjhygtriosjtijhgbtgirropgmkçfgmlkgmbgkfgrdsgrdsehghgrthartfgresaghrftgsrteghthbtyghgtrbuhisrtuhgtsujhguboijsnirefgtoprfgijárig~eagjríogjtíjhygtriosjtijhgbtgirropgmkçfgmlkgmbgkfgrdsgrdsehghgrthartfgresaghrftgsrteghthbtyghgtrbuhisrtuhgtsujhguboijsnirefgtoprfgijárig~eagjríogjtíjhygtriosjtijhgbtgirropgmkçfgmlkgmbgk</NormalText>
-    </Container>
-  )
+interface PostProps{
+  item: {
+    id: string;
+    user: string;
+    title: string;
+    body: string;
+  };
 }
 
-export default PubliForm
+export const PubliForm = ({item} : PostProps) => {
+  return (
+    <Container activeOpacity={0.9}>
+        <Title>{item.title}</Title>
+        <User>{item.user}</User>
+        <NormalText>{item.body.substring(0, 255) + '...'}</NormalText>
+
+    </Container>
+  );
+};

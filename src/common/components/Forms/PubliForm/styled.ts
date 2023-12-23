@@ -1,13 +1,15 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View`
-    margin-top:10px;
-    padding: 20px;
-    background-color: white;
+export const Container = styled.TouchableOpacity`
+    margin-top: 30px;
     width: 100%;
-    height: 20%;
-    border: black;
-    border-radius: 32px;
+    overflow: hidden;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    align-items: center;
+    align-self: 'center';
+    padding: 10px;
+    margin: 20px auto;
 `;
 
 export const Title = styled.Text`
