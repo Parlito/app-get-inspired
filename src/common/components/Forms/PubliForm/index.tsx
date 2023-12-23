@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, NormalText, Title, User } from './styled'
 import Input from '../../Controllers/Input';
 import Button from '../../Controllers/Button';
+import { TextArea } from '../../Controllers/TextArea';
 
 interface PostProps{
   item: {
@@ -26,7 +27,7 @@ export const PubliForm = ({item, id} : PostProps) => {
     <Container>
       <Title>Nova publicação</Title>
       <Input placeholder='Título da publicação' onChangeText={setTitulo}/>
-      <Input placeholder='Sua história' onChangeText={setDescription}/>
+      <TextArea placeholder='Sua história' onChangeText={setDescription}/>
 
       <Button title='Publicar!' isLoading={isLoading} onPress={handleNewPubli}/>
     </Container>
