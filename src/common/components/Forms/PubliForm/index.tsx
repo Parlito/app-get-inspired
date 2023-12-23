@@ -1,26 +1,49 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, NormalText, Title, User } from './styled'
 import Input from '../../Controllers/Input';
 import Button from '../../Controllers/Button';
 import { TextArea } from '../../Controllers/TextArea';
 
-interface PostProps{
-  item: {
-    user: string;
-    title: string;
-    body: string;
-  };
-  id: string;
-}
+import firebase from '@react-native-firebase/app';
+import firestore from "@react-native-firebase/firestore"
+import auth from '@react-native-firebase/auth';
+
+import { Alert } from 'react-native';
 
 export const PubliForm = () => {
 
+  const [user, setUser] = useState(null);
   const [titulo, setTitulo] = useState('');
   const [description, setDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    const unsubscribe = auth().onAuthStateChanged((authUser) => {
+      setUser(authUser);
+    });
+
+    return unsubscribe;
+  }, []);
+
   function handleNewPubli() {
+    if (!user) {
+      Alert.alert("Acesso Negado", "Você precisa estar logado para publicar.");
+      return;
+    }
+
     setIsLoading(true);
+
+    firestore()
+    .collection('posts')
+    .add({
+      userId: user.uid,
+      titulo,
+      description,
+      created_at: firestore.FieldValue.serverTimestamp()
+    })
+    .then(() => Alert.alert("Publicação", "publicação feita com sucesso!"))
+    .catch((error) => console.log(error))
+    .finally(() => setIsLoading(false));
   }
 
   return (
