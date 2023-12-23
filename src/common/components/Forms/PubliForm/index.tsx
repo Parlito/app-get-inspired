@@ -50,6 +50,7 @@ export const PubliForm = () => {
   }
 
   return (
+    
     <Container>
       <Title>Nova publicação</Title>
       <Input placeholder='Título da publicação' onChangeText={setTitulo}/>
