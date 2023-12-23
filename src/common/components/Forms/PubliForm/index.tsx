@@ -13,7 +13,7 @@ interface PostProps{
   id: string;
 }
 
-export const PubliForm = ({item, id} : PostProps) => {
+export const PubliForm = () => {
 
   const [titulo, setTitulo] = useState('');
   const [description, setDescription] = useState('');
