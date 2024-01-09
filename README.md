@@ -1,6 +1,8 @@
 ![Logo do projeto](https://i.imgur.com/GteNShZ.png)
 
 # Inspire-se!
+**PROJETO NÃO FINALIZADO**
+
 Um aplicativo onde usuários podem fazer posts com histórias de inspiração. 
 A ideia é ser algo simples, para testar principalmente o React-Native Firebase.
 
