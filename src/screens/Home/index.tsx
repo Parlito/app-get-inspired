@@ -14,7 +14,7 @@ function Home() {
         style={{
           flex: 1,
           paddingTop: 40,
-          backgroundColor: '#295094',
+          backgroundColor: 'white',
         }}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
