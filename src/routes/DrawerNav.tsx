@@ -7,7 +7,6 @@ import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import Home from "../screens/Home";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
-import Donations from "../screens/Donations";
 import SignInS from "../screens/SingIn";
 import CustomDrawer from "../common/components/Layout/Drawer/CustomDrawer";
 
