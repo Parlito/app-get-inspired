@@ -62,16 +62,6 @@ function DrawerNav() {
             drawerLabelStyle: {marginLeft: '9%',fontSize: 20,}, 
         }}
         /> }
-        <Screen name="donations"
-        component={Donations}
-        options={{
-            drawerLabel: 'Ajude o App!',
-            drawerIcon: config => <FontAwesome name="star" size={30} color="#318ce7" />,
-            headerTitle: '',
-            drawerItemStyle: {marginLeft: '5%'},
-            drawerLabelStyle: {marginLeft: '5%', fontSize: 20}          
-        }}
-        />
     </Navigator>
     
   )
