@@ -48,4 +48,4 @@ Funcionalidades de autenticação, banco de dados, etc.
 * [React-Native Firebase](https://rnfirebase.io/)
 
 ## 👷Autores
-**Paulo H. M. Oliveira**
+**Paulo H. M. Oliveira.**
