@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "app-get-inspired",
+    "slug": "app-get-inspired",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "fdde8db9-acc3-4fed-bf3e-ac9a87eb1791"
+      }
+    }
+  }
+}
